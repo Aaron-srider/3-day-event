@@ -27,6 +27,10 @@ export default {
     this.listLoading = false
   },
   methods: {
+
+    to(row) {
+      return { path: '/table', params: row.id }
+    },
     fetchData() {
       this.listLoading = true
       getList().then(response => {

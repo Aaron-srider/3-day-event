@@ -1,25 +1,26 @@
 <template>
 
   <div class="app-container">
+
+    <!--顶部图片-->
     <div class="topimage">
-
       <p style="background-image: url(https://img1.gtimg.com/ninja/2/2020/12/ninja160879026293561.png)"></p>
-
     </div>
 
+    <!--横向菜单-->
     <el-menu
-      :default-active="activeIndex2"
+      default-active=1
       class="el-menu-demo"
       mode="horizontal"
       @select="handleSelect"
       background-color="#0755a7"
       text-color="#fff"
-      active-text-color="#ffd04b"
+      active-text-color="rgb(66, 210, 233)"
     >
       <el-menu-item index="1">运动员列表</el-menu-item>
     </el-menu>
 
-    <!--主要内容-->
+    <!--主要表格-->
     <div class="main-body">
       <div class="topper">
         冬奥运动员
@@ -38,7 +39,7 @@
           </template>
         </el-table-column>
 
-           <el-table-column label="性别" min-width="110" align="center">
+        <el-table-column label="性别" min-width="110" align="center">
           <template slot-scope="scope">
             {{ scope.row.gender }}
           </template>
@@ -67,11 +68,14 @@
             {{ scope.row.finGrade }}
           </template>
         </el-table-column>
+
+        <el-table-column label="操作" min-width="110" align="center">
+          <template slot-scope="scope">
+            <router-link :to='to(scope.row)'>查看详情</router-link>
+          </template>
+        </el-table-column>
+
       </el-table>
-    </div>
-
-    <div class="page-footer">
-
     </div>
 
   </div>
@@ -115,31 +119,34 @@ export default page
 }
 
 .main-body {
-  width:1000px;
-  margin:0 auto;
+  width: 1000px;
+  margin: 0 auto;
 }
 
-.el-menu{
-  height:40px;
+.el-menu {
+  height: 40px;
 }
 
-.el-menu--horizontal>.el-menu-item {
-  line-height:40px;
-  height:39px;
+.el-menu--horizontal > .el-menu-item {
+  line-height: 40px;
+  height: 39px;
 }
 
-.el-menu::before{
-  content:"";
-  display:block;
-  height:60px;
-  width:100px;
-  float:left;
+.el-menu::before {
+  content: "";
+  display: block;
+  height: 60px;
+  width: 100px;
+  float: left;
 }
 
-.page-footer{
-  background: url('https://mat1.gtimg.com/qqcdn/bj2022/common/copyright-bg.jpg');
-  height: 
+a:hover, a:focus {
+  text-decoration: underline;
+}
 
+.is-active {
+  color: rgb(245, 244, 241);
+  border-bottom: 5px solid rgb(66, 210, 233);
 }
 
 </style>
