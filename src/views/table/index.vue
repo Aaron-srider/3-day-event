@@ -4,7 +4,7 @@
 
     <!--顶部图片-->
     <div class="topimage">
-      <p style="background-image: url(https://img1.gtimg.com/ninja/2/2020/12/ninja160879026293561.png)"></p>
+      <p style="background-image: url(http://47.111.5.149:10081/%E5%86%AC%E5%A5%A5%E4%BC%9A%E6%A0%87%E9%A2%98.png)"></p>
     </div>
 
     <!--横向菜单-->
@@ -17,7 +17,7 @@
       text-color="#fff"
       active-text-color="rgb(66, 210, 233)"
     >
-      <el-menu-item index="1">运动员列表</el-menu-item>
+      <!--<el-menu-item index="1">运动员列表</el-menu-item>-->
     </el-menu>
 
     <!--主要表格-->
@@ -41,7 +41,7 @@
 
         <el-table-column label="性别" min-width="110" align="center">
           <template slot-scope="scope">
-            {{ scope.row.gender }}
+            {{ scope.row.sex }}
           </template>
         </el-table-column>
 
@@ -53,19 +53,19 @@
 
         <el-table-column align="center" label="参赛项目" min-width="95">
           <template slot-scope="scope">
-            {{ scope.row.game }}
+            {{ scope.row.itemPlay }}
           </template>
         </el-table-column>
 
         <el-table-column label="预赛成绩" min-width="110" align="center">
           <template slot-scope="scope">
-            <span>{{ scope.row.preGrade }}</span>
+            <span>{{ scope.row.preResult }}</span>
           </template>
         </el-table-column>
 
         <el-table-column label="决赛成绩" min-width="110" align="center">
           <template slot-scope="scope">
-            {{ scope.row.finGrade }}
+            {{ scope.row.finalResult }}
           </template>
         </el-table-column>
 
@@ -74,8 +74,16 @@
             <router-link :to='to(scope.row)'>查看详情</router-link>
           </template>
         </el-table-column>
-
       </el-table>
+
+      <!--分页组件-->
+      <pagination
+        v-show="page.total > 0"
+        :total="page.total"
+        :page.sync="page.current"
+        :limit.sync="page.size"
+        @pagination="fetchPlayerPages"
+      />
     </div>
 
   </div>
@@ -83,6 +91,7 @@
 
 <script>
 import page from '@/views/table/index.js'
+// import Pagination from '@/components/Pagination'
 
 export default page
 </script>
@@ -93,7 +102,7 @@ export default page
   width: auto;
   height: 46px;
   background-color: red;
-  background: url(//mat1.gtimg.com/bj2022/ry_material/images/top-jiaobiao.png) no-repeat;
+  background: url(http://47.111.5.149:10081/%E5%86%AC%E5%A5%A5%E4%BC%9A%E6%A0%8F%E7%9B%AE%E9%A1%B6%E6%A0%87.png) no-repeat;
   line-height: 46px;
 
   font-size: 22px;

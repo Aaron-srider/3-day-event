@@ -27,7 +27,7 @@ export default {
 <style scoped>
 
 .page-footer {
-  background: url('https://mat1.gtimg.com/qqcdn/bj2022/common/copyright-bg.jpg');
+  background: url('http://47.111.5.149:10081/%E5%86%AC%E5%A5%A5%E4%BC%9A%E9%A1%B5%E8%84%9A%E5%9B%BE%E7%89%87.jpg');
   height: 100px;
   background-position: bottom center;
   margin-top: 80px;
