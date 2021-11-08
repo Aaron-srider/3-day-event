@@ -59,7 +59,7 @@ export const constantRoutes = [
   {
     path: '/',
     component: Layout,
-    redirect: '/example/table'
+    redirect: '/login'
   },
 
   // 列表页
